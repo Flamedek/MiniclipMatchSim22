@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">PouleSim22</string>
+    <string name="btn_start_teams">Ontdek teams</string>
+    <string name="btn_start_matches">Toernooi beginnen</string>
+    <string name="group_title">Groep %1$s</string>
+</resources>
