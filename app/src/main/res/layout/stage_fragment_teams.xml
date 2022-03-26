@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/main_card_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        tools:text="Groep F"
+        />
+
+    <FrameLayout
+        android:id="@+id/main_card_content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/main_fragment_teams"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <!-- teams are added in here -->
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <include android:id="@+id/mainActionButton" layout="@layout/stage_fragment_button" />
+
+</LinearLayout>

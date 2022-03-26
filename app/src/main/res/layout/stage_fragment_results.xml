@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:gravity="center"
+        android:text="@string/results_teams_title"
+        android:layout_marginTop="24dp"
+        />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+            android:text="#1"
+            tools:ignore="HardcodedText"
+            />
+
+        <ImageView
+            android:id="@+id/result_1_logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            tools:src="@drawable/icon_ajax" />
+
+        <TextView
+            android:id="@+id/result_1_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            tools:text="Ajax" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+            android:text="#2"
+            tools:ignore="HardcodedText"
+            />
+
+        <ImageView
+            android:id="@+id/result_2_logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            tools:src="@drawable/icon_dortmund" />
+
+        <TextView
+            android:id="@+id/result_2_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            tools:text="Dortmund" />
+
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/main_button_restart"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_restart"
+        app:iconTint="@color/secondary_text"
+        android:textColor="@color/secondary_text"
+        android:text="@string/btn_restart"
+        android:layout_marginTop="32dp"
+        />
+
+</LinearLayout>

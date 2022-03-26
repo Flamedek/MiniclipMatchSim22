@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp"
+    >
+
+    <ImageView
+        android:id="@+id/main_fragment_team_icon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        tools:src="@drawable/icon_ajax"
+        android:layout_marginStart="16dp"
+        />
+
+    <TextView
+        android:id="@+id/main_fragment_team_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:labelFor="@+id/main_fragment_team_icon"
+        tools:text="Ajax"
+        tools:ignore="LabelFor"
+        />
+
+</LinearLayout>

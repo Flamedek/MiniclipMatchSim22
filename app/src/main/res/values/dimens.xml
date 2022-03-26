@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="score_table_row_height">32dp</dimen>
+    <dimen name="score_table_cell_width">22dp</dimen>
+    <dimen name="score_table_width">320dp</dimen>
+    <dimen name="match_list_row_height">64dp</dimen>
+</resources>

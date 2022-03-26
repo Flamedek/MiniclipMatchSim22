@@ -1,6 +1,20 @@
 <resources>
     <string name="app_name">PouleSim22</string>
-    <string name="btn_start_teams">Ontdek teams</string>
+    <string name="btn_start_teams">Genereer poule</string>
     <string name="btn_start_matches">Toernooi beginnen</string>
+    <string name="btn_start_results">Naar resultaten</string>
+    <string name="btn_play_matches">Speel volgende ronde</string>
     <string name="group_title">Groep %1$s</string>
+    <string name="label_team">Club</string>
+    <string name="label_games">G</string>
+    <string name="label_points">P</string>
+    <string name="label_goals_difference">DS</string>
+    <string name="label_goals_against">DT</string>
+    <string name="label_goals_scored">DV</string>
+    <string name="label_losses">V</string>
+    <string name="label_draws">G</string>
+    <string name="label_wins">W</string>
+    <string name="btn_restart">Restart</string>
+    <string name="results_teams_title">De volgende teams zijn door naar de knock-out fase:</string>
+
 </resources>

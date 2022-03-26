@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/match_list_row_height"
+    android:gravity="center"
+    >
+
+    <ImageView
+        android:id="@+id/match_icon_home"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        tools:src="@drawable/icon_ajax"
+        />
+
+    <TextView
+        android:id="@+id/match_name_home"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingStart="8dp"
+        android:gravity="start"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        tools:text="Ajax"
+        />
+
+    <TextView
+        android:id="@+id/match_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        android:textStyle="bold"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        tools:text="2 - 1"
+        />
+
+    <TextView
+        android:id="@+id/match_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:gravity="center"
+        tools:text="12 apr\n21:00"
+        />
+
+    <TextView
+        android:id="@+id/match_name_away"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingEnd="8dp"
+        android:gravity="end"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        tools:text="Borussia Dortmund"
+        />
+
+    <ImageView
+        android:id="@+id/match_icon_away"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        tools:src="@drawable/icon_dortmund"
+        />
+
+</LinearLayout>

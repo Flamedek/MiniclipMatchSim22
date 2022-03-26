@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/score_table_header_row"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/score_table_row_height"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/label_team"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+            />
+
+        <TextView
+            android:layout_width="@dimen/score_table_cell_width"
+            android:layout_height="wrap_content"
+            android:text="@string/label_games"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+            />
+
+        <TextView
+            android:layout_width="@dimen/score_table_cell_width"
+            android:layout_height="wrap_content"
+            android:text="@string/label_wins"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+            />
+
+        <TextView
+            android:layout_width="@dimen/score_table_cell_width"
+            android:layout_height="wrap_content"
+            android:text="@string/label_draws"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+            />
+
+        <TextView
+            android:layout_width="@dimen/score_table_cell_width"
+            android:layout_height="wrap_content"
+            android:text="@string/label_losses"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+            />
+
+        <TextView
+            android:layout_width="@dimen/score_table_cell_width"
+            android:layout_height="wrap_content"
+            android:text="@string/label_goals_scored"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+            />
+
+        <TextView
+            android:layout_width="@dimen/score_table_cell_width"
+            android:layout_height="wrap_content"
+            android:text="@string/label_goals_against"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+            />
+
+        <TextView
+            android:layout_width="@dimen/score_table_cell_width"
+            android:layout_height="wrap_content"
+            android:text="@string/label_goals_difference"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+            />
+
+        <TextView
+            android:layout_width="@dimen/score_table_cell_width"
+            android:layout_height="wrap_content"
+            android:text="@string/label_points"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+            />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/score_table_items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        tools:listitem="@layout/scores_table_row"
+        tools:itemCount="4">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

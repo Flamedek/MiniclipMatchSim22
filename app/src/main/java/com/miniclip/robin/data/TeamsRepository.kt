@@ -12,12 +12,11 @@ class TeamsRepository(val dataSource: DataSource<List<Team>>) {
     suspend fun getTeams(): List<Team> {
         teams?.let { return it.await() }
 
-        return scope.async(Dispatchers.IO) {
-            delay(200) // simulate potentially long running process
+        val value = scope.async(Dispatchers.IO) {
             dataSource.getData()
-        }.also {
-            teams = it
-        }.await()
+        }
+        teams = value
+        return value.await()
     }
 
     suspend fun findTeamById(guid: String): Team? {

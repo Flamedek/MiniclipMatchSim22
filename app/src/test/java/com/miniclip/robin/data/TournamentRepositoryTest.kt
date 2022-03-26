@@ -1,16 +1,21 @@
 package com.miniclip.robin.data
 
 import com.miniclip.robin.data.model.Team
+import com.miniclip.robin.simulation.MatchSimulator
+import io.mockk.junit5.MockKExtension
+import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.ExperimentalSerializationApi
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
+import org.junit.jupiter.api.extension.ExtendWith
 import java.io.File
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 
 @ExperimentalSerializationApi
+@ExtendWith(MockKExtension::class)
 internal class TournamentRepositoryTest {
 
     private lateinit var repository: TournamentRepository
@@ -68,5 +73,6 @@ private fun createRepository(): TournamentRepository {
     }
 
     val teamsRepository = TeamsRepository(teamDataSource)
-    return TournamentRepository(teamsRepository)
+    val simulator = mockk<MatchSimulator>()
+    return TournamentRepository(teamsRepository, simulator)
 }
