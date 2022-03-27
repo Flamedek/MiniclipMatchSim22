@@ -67,6 +67,10 @@ class GroupStageViewModel(activity: Application) : AndroidViewModel(activity) {
         reloadGroupStage()
     }
 
+    fun shouldCelebrate(): Boolean {
+        return viewState.value is ViewState.Results && groupStage.scores.firstOrNull()?.team?.name == "Ajax"
+    }
+
     private fun reloadGroupStage() {
         viewModelScope.launch {
             groupStage = tournamentRepository.getCurrentGroupStage()

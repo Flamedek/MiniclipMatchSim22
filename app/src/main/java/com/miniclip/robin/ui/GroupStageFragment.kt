@@ -1,28 +1,31 @@
 package com.miniclip.robin.ui
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.core.view.plusAssign
 import androidx.core.view.postDelayed
 import androidx.fragment.app.Fragment
-import androidx.transition.AutoTransition
-import androidx.transition.Transition
-import androidx.transition.TransitionManager
+import androidx.transition.*
 import com.miniclip.robin.R
 import com.miniclip.robin.data.model.GroupStage
 import com.miniclip.robin.databinding.*
 import com.miniclip.robin.ui.GroupStageViewModel.ViewState.*
 import com.miniclip.robin.ui.components.MatchListBuilder
 import com.miniclip.robin.ui.components.ScoresTableBuilder
+import com.miniclip.robin.ui.components.alphamovie.AlphaMovieView
 import com.miniclip.robin.util.EaseInOutQuartInterpolator
 import com.miniclip.robin.util.extensions.dpToPx
 import com.miniclip.robin.util.extensions.fragmentViewModel
+import com.miniclip.robin.util.extensions.getResourceUri
 import com.miniclip.robin.util.extensions.viewBinding
 
 private const val DEFAULT_TRANSITION_DURATION = 650L
-private const val TOTAL_TRANSITION_DURATION = DEFAULT_TRANSITION_DURATION * 3
+private const val TOTAL_TRANSITION_DURATION = DEFAULT_TRANSITION_DURATION * 2
 
 class GroupStageFragment : Fragment(R.layout.stage_fragment) {
 
@@ -34,6 +37,17 @@ class GroupStageFragment : Fragment(R.layout.stage_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel.viewState.observe(viewLifecycleOwner, ::moveToState)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        celebrationOverlayView?.onResume()
+        celebrationOverlayView?.start()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        celebrationOverlayView?.onPause()
     }
 
     /**
@@ -97,12 +111,12 @@ class GroupStageFragment : Fragment(R.layout.stage_fragment) {
                     .setDuration(300L)
                     .setInterpolator(EaseInOutQuartInterpolator())
                     .alpha(1f)
-                    .translationY(0f).startDelay = i * 300L
+                    .translationY(0f).startDelay = i * 250L
             }
         }
 
         // add action button after delay
-        view.root.postDelayed(TOTAL_TRANSITION_DURATION + (group.teams.size * 300L) + 200L) {
+        view.root.postDelayed(TOTAL_TRANSITION_DURATION + ((group.teams.size + 1) * 250L)) {
             TransitionManager.beginDelayedTransition(views.root, getDefaultTransition())
             view.mainActionButton.root.visibility = View.VISIBLE
         }
@@ -111,6 +125,8 @@ class GroupStageFragment : Fragment(R.layout.stage_fragment) {
     private lateinit var matchViews: StageFragmentMatchesBinding
     private lateinit var scoreTableBuilder: ScoresTableBuilder
     private lateinit var matchListBuilder: MatchListBuilder
+
+    private var celebrationOverlayView: AlphaMovieView? = null
 
     private fun initMatchesState(group: GroupStage) {
         if (displayedState !is Matches) {
@@ -159,14 +175,46 @@ class GroupStageFragment : Fragment(R.layout.stage_fragment) {
         view.result2Logo.setImageResource(viewModel.getIconResource(group.scores[1].team.icon))
 
         view.mainButtonRestart.setOnClickListener {
+            celebrationOverlayView?.let { overlay ->
+                overlay.stop()
+                overlay.release()
+                views.root.removeView(overlay)
+            }
             viewModel.onRestartClick()
+        }
+
+        if (viewModel.shouldCelebrate()) {
+            val overlay = AlphaMovieView(requireContext())
+            overlay.setAlphaColor(Color.BLACK)
+            overlay.setAccuracy(0.4f)
+            overlay.setVideoFromUri(requireContext(), resources.getResourceUri(R.raw.video_confetti_hq_portrait_veed))
+            overlay.elevation = 24f
+
+            views.root.addView(overlay, ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))
+            celebrationOverlayView = overlay
         }
     }
 
     private fun getDefaultTransition(): Transition {
-        return AutoTransition().apply {
-            duration = DEFAULT_TRANSITION_DURATION
+        /*
+         * Mimic AutoTransition but with adjusted durations
+         */
+        return TransitionSet().apply {
+            ordering = TransitionSet.ORDERING_SEQUENTIAL
             interpolator = EaseInOutQuartInterpolator()
+
+            addTarget(ViewGroup::class.java)
+            addTarget(TextView::class.java)
+
+            addTransition(Fade(Fade.OUT).apply {
+                duration = DEFAULT_TRANSITION_DURATION / 2
+            })
+            addTransition(ChangeBounds().apply {
+                duration = DEFAULT_TRANSITION_DURATION
+            })
+            addTransition(Fade(Fade.IN).apply {
+                duration = DEFAULT_TRANSITION_DURATION / 2
+            })
         }
     }
 

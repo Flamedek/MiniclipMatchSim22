@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_goal_blurred"
     tools:context=".ui.GroupStageFragment"
-    android:animateLayoutChanges="true"
     >
 
     <com.google.android.material.card.MaterialCardView
@@ -32,5 +31,15 @@
         <!-- Content is added in here -->
 
     </com.google.android.material.card.MaterialCardView>
+
+<!--    <com.miniclip.robin.ui.components.alphamovie.AlphaMovieView-->
+<!--        android:id="@+id/overlay_video_player"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:elevation="24dp"-->
+<!--        android:visibility="gone"-->
+<!--        app:alphaColor="@android:color/black"-->
+<!--        app:accuracy="0.4"-->
+<!--        />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
