@@ -75,6 +75,7 @@ class GroupStageViewModel(activity: Application) : AndroidViewModel(activity) {
         viewModelScope.launch {
             groupStage = tournamentRepository.getCurrentGroupStage()
             viewState.value = ViewState.Initial
+            viewState.value = ViewState.Matches(groupStage)
         }
     }
 

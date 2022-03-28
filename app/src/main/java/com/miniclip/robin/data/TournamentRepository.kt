@@ -2,9 +2,9 @@ package com.miniclip.robin.data
 
 import com.miniclip.robin.data.model.GroupStage
 import com.miniclip.robin.data.model.GroupStageStats
-import com.miniclip.robin.data.model.Match
 import com.miniclip.robin.data.model.Team
 import com.miniclip.robin.simulation.MatchSimulator
+import com.miniclip.robin.simulation.model.Match
 import com.miniclip.robin.util.extensions.contains
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

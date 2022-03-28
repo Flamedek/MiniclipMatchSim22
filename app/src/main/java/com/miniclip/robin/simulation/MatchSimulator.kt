@@ -1,7 +1,7 @@
 package com.miniclip.robin.simulation
 
-import com.miniclip.robin.data.model.Match
-import com.miniclip.robin.data.model.MatchResult
+import com.miniclip.robin.simulation.model.Match
+import com.miniclip.robin.simulation.model.MatchResult
 
 
 interface MatchSimulator {

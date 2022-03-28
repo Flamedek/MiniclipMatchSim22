@@ -9,8 +9,8 @@ import android.view.ViewPropertyAnimator
 import android.view.animation.OvershootInterpolator
 import android.widget.LinearLayout
 import androidx.core.view.plusAssign
-import com.miniclip.robin.data.model.Match
 import com.miniclip.robin.databinding.MatchListRowBinding
+import com.miniclip.robin.simulation.model.Match
 import com.miniclip.robin.ui.GroupStageViewModel
 import com.miniclip.robin.util.extensions.TAG
 

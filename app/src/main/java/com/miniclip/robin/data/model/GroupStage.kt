@@ -1,5 +1,6 @@
 package com.miniclip.robin.data.model
 
+import com.miniclip.robin.simulation.model.Match
 
 
 data class GroupStage(

@@ -5,7 +5,7 @@ import com.miniclip.robin.data.TeamsRepository
 import com.miniclip.robin.data.TournamentRepository
 import com.miniclip.robin.data.jsonDataSource
 import com.miniclip.robin.data.model.Team
-import com.miniclip.robin.simulation.MatchEngineV1
+import com.miniclip.robin.simulation.MatchEngineV2
 
 class SimApplication : Application() {
 
@@ -26,7 +26,7 @@ class SimApplication : Application() {
         }
         teamsRepository = TeamsRepository(teamDataSource)
 
-        val matchSimulator = MatchEngineV1()
+        val matchSimulator = MatchEngineV2()
         tournamentRepository = TournamentRepository(teamsRepository, matchSimulator)
     }
 
