@@ -1,6 +1,7 @@
 package com.miniclip.robin.simulation
 
 import com.miniclip.robin.simulation.behaviour.MovementBehaviour
+import com.miniclip.robin.simulation.behaviour.OutOfBoundsBehaviour
 import com.miniclip.robin.simulation.behaviour.ShootingBehaviour
 import com.miniclip.robin.simulation.behaviour.WeightedAction
 import com.miniclip.robin.simulation.behaviour.WeightedAction.Companion.MIN_WEIGHT_SUM
@@ -25,6 +26,7 @@ private const val MINS_PER_STEP = SIMULATION_STEPS / 90f
 class MatchEngineV2(private val random: Random = Random) : MatchSimulator {
 
     private val behaviours = listOf(
+        OutOfBoundsBehaviour(random),
         MovementBehaviour(random),
         ShootingBehaviour(random),
         /* TODO add many more. Behaviours could be separated into specifics like tiki-taka, through-ball, crossing, tackling etc. */

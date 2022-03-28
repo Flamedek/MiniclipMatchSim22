@@ -11,6 +11,7 @@ import com.miniclip.robin.simulation.model.PositionedPlayer
 import com.miniclip.robin.util.Vec2
 import com.miniclip.robin.util.Vec2F
 import com.miniclip.robin.util.toFloats
+import kotlin.math.max
 import kotlin.random.Random
 
 /** The ideal distance to take a shot */
@@ -45,9 +46,6 @@ class ShootingBehaviour(private val random: Random) : GameBehaviour {
 
     inner class DistanceShotAction(val player: PositionedPlayer, val goalie: PositionedPlayer, val pathToGoal: Vec2F) : WeightedAction {
 
-        /** Band-aid to make scoring harder. Should be based on more elaborate math and stats */
-        private val SHOOT_HANDICAP = 10
-
         private val distance = pathToGoal.length()
 
         private val builder = PitchBuilder()
@@ -63,19 +61,19 @@ class ShootingBehaviour(private val random: Random) : GameBehaviour {
             // TODO calculate chance based on distance, stats, etc.
             // TODO check if defender blocks
 
-            val shotQuality = player.data.quality - SHOOT_HANDICAP
+            val shotQuality = player.data.quality
             val goalieQuality = goalie.data.quality
 
-            if (!rollSkillCheck(random, shotQuality, 1f)) {
+            val handicap = max(0f, distance - BASE_SHOOTING_DISTANCE).toInt()
+            if (!rollSkillCheck(random, shotQuality - handicap, 1f)) {
                 // missed!
-                    //
                 return MatchEventData.MissedShot(shooter = player.data)
             }
 
-            return if (rollDuelCheck(random, shotQuality, goalieQuality, 20)) {
-                MatchEventData.Goal(player.team, player.data, type = GoalType.SHOT_DISTANCE)
-            } else {
+            return if (rollDuelCheck(random, goalieQuality, shotQuality - handicap, 10)) {
                 MatchEventData.SavedShot(shooter = player.data, goalie = goalie.data)
+            } else {
+                MatchEventData.Goal(player.team, player.data, type = GoalType.SHOT_DISTANCE)
             }
         }
 
@@ -95,14 +93,14 @@ class ShootingBehaviour(private val random: Random) : GameBehaviour {
                 is MatchEventData.MissedShot -> {
                     // Keeper ball. He immediately shoots it somewhere into the field
                     // TODO chance to pass to defender instead.
-                    val newX = Random.nextInt(PITCH_WIDTH)
-                    val newY = PITCH_LENGTH / 4 + Random.nextInt(PITCH_LENGTH / 2)
+                    val newX = random.nextInt(PITCH_WIDTH)
+                    val newY = PITCH_LENGTH / 4 + random.nextInt(PITCH_LENGTH / 2)
                     return state.copy(
                         ballPosition = Vec2(newX, newY),
                         possession = null
                     )
                 }
-                // TODO corner, defender interception etc.
+                // TODO caused a corner, defender interception etc.
                 else -> throw NotImplementedError()
             }
         }
