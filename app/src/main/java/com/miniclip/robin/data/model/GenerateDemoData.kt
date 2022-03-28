@@ -10,17 +10,27 @@ import kotlin.random.Random
 
 /*
  * A standalone utility class to generate our demo content in 'teams.json'.
- * This should not be considered part of the app, and would be stripped by ProGuard/R8 optimizer.
+ * This should not be considered part of the app, and would be stripped by the ProGuard/R8 optimizer.
  * Normally this data would be fetched from the backend.
  */
 fun main() {
     val random = Random
 
     val teams = listOf(
-        generateTeam(random, "Ajax", "icon_ajax", targetQuality = 85),
-        generateTeam(random, "Sporting CP", "icon_sporting", targetQuality = 70),
+        generateTeam(random, "Ajax", "icon_ajax", targetQuality = 88),
+        generateTeam(random, "Sporting CP", "icon_sporting", targetQuality = 68),
         generateTeam(random, "Borussia Dortmund", "icon_dortmund", targetQuality = 80),
         generateTeam(random, "Beşiktaş", "icon_besiktas", targetQuality = 60),
+
+        generateTeam(random, "Manchester City", "icon_man_city", targetQuality = 84),
+        generateTeam(random, "PSG", "icon_psg", targetQuality = 85),
+        generateTeam(random, "Club Brugge", "icon_club_brugge", targetQuality = 70),
+        generateTeam(random, "AC Milan", "icon_milan", targetQuality = 75),
+
+        generateTeam(random, "Manchester United", "icon_man_utd", targetQuality = 85),
+        generateTeam(random, "Villareal", "icon_villareal", targetQuality = 70),
+        generateTeam(random, "Barcelona", "icon_barcelona", targetQuality = 85),
+        generateTeam(random, "Real Madrid", "icon_real_madrid", targetQuality = 90),
     )
 
     val prettyJson = Json {

@@ -15,17 +15,12 @@ class GroupStageViewModel(activity: Application) : AndroidViewModel(activity) {
     /**
      * Observable value for the current state to display in the view.
      */
-    val viewState = MutableLiveData<ViewState>()
+    val viewState = MutableLiveData<ViewState>(ViewState.Initial)
 
-
+    private lateinit var groupMode: GroupMode
     private lateinit var groupStage: GroupStage
 
     private val tournamentRepository get() = application.tournamentRepository
-
-    init {
-        viewState.value = ViewState.Loading
-        reloadGroupStage()
-    }
 
     //
     // Getters
@@ -49,8 +44,14 @@ class GroupStageViewModel(activity: Application) : AndroidViewModel(activity) {
     //
     // Interaction handlers
 
-    fun onStartTeams() {
-        if (viewState.value != ViewState.Loading) {
+    fun onStartTeams(mode: GroupMode) {
+        viewState.value = ViewState.Loading
+        viewModelScope.launch {
+            groupMode = mode
+            groupStage = when (mode) {
+                GroupMode.FIXED -> tournamentRepository.getFixedGroupStage()
+                GroupMode.RANDOM -> tournamentRepository.getRandomGroupStage()
+            }
             viewState.value = ViewState.Teams(groupStage)
         }
     }
@@ -77,15 +78,14 @@ class GroupStageViewModel(activity: Application) : AndroidViewModel(activity) {
     }
 
     fun onRestartClick() {
-        reloadGroupStage()
-    }
-
-    private fun reloadGroupStage() {
         viewModelScope.launch {
-            groupStage = tournamentRepository.getCurrentGroupStage()
-            viewState.value = ViewState.Initial
+            groupStage = tournamentRepository.resetGroupStage(groupStage)
             viewState.value = ViewState.Matches(groupStage)
         }
+    }
+
+    fun onToStartClick() {
+        viewState.value = ViewState.Initial
     }
 
     /**
@@ -102,6 +102,13 @@ class GroupStageViewModel(activity: Application) : AndroidViewModel(activity) {
         class Matches(val group: GroupStage) : ViewState()
 
         class Results(val group: GroupStage) : ViewState()
+    }
+
+    enum class GroupMode {
+        /** Use fixed predefined teams */
+        FIXED,
+        /** Use random teams */
+        RANDOM;
     }
 
 }

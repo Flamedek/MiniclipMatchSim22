@@ -16,5 +16,8 @@
     <string name="label_wins">W</string>
     <string name="btn_restart">Restart</string>
     <string name="results_teams_title">De volgende teams zijn door naar de knock-out fase:</string>
+    <string name="btn_start_group_fixed">Groep F</string>
+    <string name="btn_start_group_random">Random groep</string>
+    <string name="btn_to_start">Terug naar begin</string>
 
 </resources>

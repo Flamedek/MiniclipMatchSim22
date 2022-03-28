@@ -1,298 +1,890 @@
 [
     {
-        "id": "f0e5604f-96e3-45ba-8d3e-ff3b33fdc66d",
+        "id": "be7fb7df-b4ae-4d38-bc5b-53cfad1eb0c4",
         "name": "Ajax",
         "icon": "icon_ajax",
         "players": [
             {
-                "id": "c109b160-ef22-418c-8eed-33ec5827441b",
+                "id": "b4ab0436-38da-452b-bca3-aedc9fe12c77",
                 "name": "",
                 "role": "GOALIE",
-                "quality": 85
+                "quality": 90
             },
             {
-                "id": "2aa80e3e-ea8b-4a8d-bc67-b902534202db",
-                "name": "",
-                "role": "DEFENCE",
-                "quality": 84
-            },
-            {
-                "id": "fbb6dffa-c100-4ef5-a18c-c0949d6d3d23",
-                "name": "",
-                "role": "DEFENCE",
-                "quality": 96
-            },
-            {
-                "id": "e6721489-f9d1-4b28-80d7-d52f63547bd9",
+                "id": "58df18af-370e-4798-b401-ea6cbd0848c1",
                 "name": "",
                 "role": "DEFENCE",
                 "quality": 88
             },
             {
-                "id": "80d9e6f2-7c59-45c1-8f7e-052c10202803",
+                "id": "9df2ee4b-fd2d-47fa-b46a-69194b1c3e1e",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 88
+            },
+            {
+                "id": "a4e288ee-f699-408d-9bd1-8aba415b913e",
                 "name": "",
                 "role": "DEFENCE",
                 "quality": 87
             },
             {
-                "id": "097b9386-4bc6-4151-9aec-8762941f0268",
+                "id": "6028b25c-8f9a-45bd-91ec-e1d740403b64",
                 "name": "",
-                "role": "MIDFIELD",
-                "quality": 87
+                "role": "DEFENCE",
+                "quality": 92
             },
             {
-                "id": "a181ebf2-78d5-4835-bec5-b914d8eb3fc7",
+                "id": "ec89886c-b6ed-4487-a263-98e803c5ad14",
                 "name": "",
                 "role": "MIDFIELD",
-                "quality": 87
+                "quality": 88
             },
             {
-                "id": "3368ac98-75ad-416b-acfe-22a29302f94e",
+                "id": "375f96d9-fffe-4719-abed-947b5b1e7113",
                 "name": "",
                 "role": "MIDFIELD",
-                "quality": 85
+                "quality": 88
             },
             {
-                "id": "47e1edf7-2fa3-44f5-9fb1-80174762759d",
+                "id": "b36fb90e-08e3-477b-9066-63a644f1a951",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 91
+            },
+            {
+                "id": "315c705e-9491-45c9-b585-ecd35252cb55",
                 "name": "",
                 "role": "ATTACK",
                 "quality": 85
             },
             {
-                "id": "3d34f8a4-3072-4765-8739-1aa2b3aca604",
+                "id": "2c24f2ea-aa53-4b86-88ad-a95a5a395832",
                 "name": "",
                 "role": "ATTACK",
-                "quality": 90
+                "quality": 88
             },
             {
-                "id": "f836c5a4-0b10-42d0-8e98-ae898ea3690a",
+                "id": "3da6db79-8187-4558-9530-169161389398",
                 "name": "",
                 "role": "ATTACK",
-                "quality": 85
+                "quality": 88
             }
         ],
-        "formation": "FORMATION_4_3_3"
+        "formation": "FORMATION_4_3_3_B"
     },
     {
-        "id": "94bffbb3-145c-4599-a197-7e3a723ad58c",
+        "id": "20021c2e-9ec7-40b4-8fc2-3447dc76cc5e",
         "name": "Sporting CP",
         "icon": "icon_sporting",
         "players": [
             {
-                "id": "b6759662-7057-413d-96c8-7e3bdc52369a",
+                "id": "45b32d6b-445f-4c22-b689-08fa4cc5158e",
                 "name": "",
                 "role": "GOALIE",
-                "quality": 70
-            },
-            {
-                "id": "d7d34771-d334-4e2a-8ce3-f72d5ad80201",
-                "name": "",
-                "role": "DEFENCE",
                 "quality": 68
             },
             {
-                "id": "f3916e5b-0dc6-42f4-b41b-7555286168d9",
+                "id": "7b08ff57-fc71-4394-a23b-0780f4911306",
                 "name": "",
                 "role": "DEFENCE",
+                "quality": 58
+            },
+            {
+                "id": "553f7fe7-8bb9-4dfd-bfcb-0e187f73a2f1",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 66
+            },
+            {
+                "id": "17d3013c-6fa0-4beb-b5d4-97705bfdf12d",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 62
+            },
+            {
+                "id": "f723811a-1443-4b50-ae16-3578e3588327",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 62
+            },
+            {
+                "id": "10d41cd7-63a1-46ba-bc75-9f4b5f32c9af",
+                "name": "",
+                "role": "MIDFIELD",
                 "quality": 70
             },
             {
-                "id": "9aadf29d-422f-4fb7-a8f5-3d30a1de5304",
+                "id": "2f544d1c-5c13-4911-82e7-e608733eec31",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 68
+            },
+            {
+                "id": "eccd319e-8d9c-4dae-a6c5-474738e827d9",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 68
+            },
+            {
+                "id": "9d3554ee-c247-4a83-ac0f-ed6a182fd339",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 68
+            },
+            {
+                "id": "bd410a88-bbd3-4c1b-9ce4-220236981359",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 71
+            },
+            {
+                "id": "0e63ef79-28b6-4ae6-8de8-cf9488c063d9",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 77
+            }
+        ],
+        "formation": "FORMATION_4_3_3_B"
+    },
+    {
+        "id": "f7f046e7-e768-498f-b234-f1111af8de9e",
+        "name": "Borussia Dortmund",
+        "icon": "icon_dortmund",
+        "players": [
+            {
+                "id": "9bac2585-9e17-4970-a504-8c7cd2ecb5dc",
+                "name": "",
+                "role": "GOALIE",
+                "quality": 89
+            },
+            {
+                "id": "1d3499da-2373-435f-86ae-5f3a57c275b8",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 88
+            },
+            {
+                "id": "edfd9bb6-d3df-4c0b-8a32-da415ef8c942",
                 "name": "",
                 "role": "DEFENCE",
                 "quality": 75
             },
             {
-                "id": "08c874a3-e2bb-43d3-a53f-43a9272b211a",
+                "id": "6c8e2957-66aa-4b96-aa85-e798bf645c68",
                 "name": "",
                 "role": "DEFENCE",
-                "quality": 70
+                "quality": 80
             },
             {
-                "id": "4019b5cf-ef0e-4588-a455-4724bf1e9bc2",
+                "id": "3370b1ba-f80a-4811-92a4-ac06bb7d4153",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 77
+            },
+            {
+                "id": "ec7d5382-25d9-4c8e-aca7-fae9423c5bf4",
                 "name": "",
                 "role": "MIDFIELD",
-                "quality": 64
+                "quality": 80
             },
             {
-                "id": "9d786965-71f1-4c14-8143-12293823e03a",
+                "id": "7fcad1d4-b837-4c5e-8a12-964453c00349",
                 "name": "",
                 "role": "MIDFIELD",
-                "quality": 72
+                "quality": 80
             },
             {
-                "id": "73902b6f-0ccb-4094-8412-23c26f39f93d",
-                "name": "",
-                "role": "MIDFIELD",
-                "quality": 78
-            },
-            {
-                "id": "488cbae5-3ef0-487b-8447-50cee0200f62",
+                "id": "fce57767-3ef5-4063-b554-65107c67f349",
                 "name": "",
                 "role": "ATTACK",
-                "quality": 70
+                "quality": 87
             },
             {
-                "id": "47447892-f462-4441-aee3-9129d638e8e2",
+                "id": "42d2abb8-6d71-4e86-90b1-a76d5200adcb",
                 "name": "",
                 "role": "ATTACK",
-                "quality": 71
+                "quality": 80
             },
             {
-                "id": "956f943a-d181-444e-b4c4-724ecdbc7456",
+                "id": "46ae544b-a01d-4385-9aa0-68dce12bd693",
                 "name": "",
                 "role": "ATTACK",
-                "quality": 66
-            }
-        ],
-        "formation": "FORMATION_4_3_3"
-    },
-    {
-        "id": "0b11d8d3-69e4-48cb-b0e9-1c50e42e3ed0",
-        "name": "Borussia Dortmund",
-        "icon": "icon_dortmund",
-        "players": [
-            {
-                "id": "6436fc22-0f35-4c1c-aeb2-2114128979f4",
-                "name": "",
-                "role": "GOALIE",
-                "quality": 73
+                "quality": 89
             },
             {
-                "id": "62bba31b-9a95-497e-a576-0eee376735fd",
+                "id": "5a5ca1c7-fae0-423d-bc62-ef9f36b4a068",
                 "name": "",
-                "role": "DEFENCE",
-                "quality": 71
-            },
-            {
-                "id": "677f14de-0180-412b-931a-6992b5ab3bb5",
-                "name": "",
-                "role": "DEFENCE",
-                "quality": 70
-            },
-            {
-                "id": "2a485ca1-2678-491c-b5d2-4bd743fe5c66",
-                "name": "",
-                "role": "DEFENCE",
-                "quality": 88
-            },
-            {
-                "id": "4953928b-eec7-4993-86b5-0b04d75b6c1f",
-                "name": "",
-                "role": "DEFENCE",
-                "quality": 85
-            },
-            {
-                "id": "8803518d-3000-488f-b203-11aeea50bd54",
-                "name": "",
-                "role": "MIDFIELD",
-                "quality": 85
-            },
-            {
-                "id": "77726dcc-8c2c-4fbb-98d8-a0f0d08a9f74",
-                "name": "",
-                "role": "MIDFIELD",
+                "role": "ATTACK",
                 "quality": 81
-            },
-            {
-                "id": "b0f60158-9ce5-4f22-8346-4628374b686b",
-                "name": "",
-                "role": "ATTACK",
-                "quality": 80
-            },
-            {
-                "id": "9408441d-961b-4d01-8cc6-7a365a95c924",
-                "name": "",
-                "role": "ATTACK",
-                "quality": 76
-            },
-            {
-                "id": "1d5e353b-40c0-4ae3-8671-a688c987b370",
-                "name": "",
-                "role": "ATTACK",
-                "quality": 72
-            },
-            {
-                "id": "ce052cc3-f193-4177-aa7f-aa3890515ae5",
-                "name": "",
-                "role": "ATTACK",
-                "quality": 80
             }
         ],
         "formation": "FORMATION_4_2_3_1"
     },
     {
-        "id": "3557284c-d97f-4f5b-b7a7-57eb1c48817d",
+        "id": "b749f11f-6c66-437f-927e-cc5317c9b8e8",
         "name": "Beşiktaş",
         "icon": "icon_besiktas",
         "players": [
             {
-                "id": "454ea038-1733-4fed-b5ac-7b65568c0bdd",
+                "id": "dfdc0153-8ccc-4858-8211-248b5c36fae6",
                 "name": "",
                 "role": "GOALIE",
                 "quality": 60
             },
             {
-                "id": "3ca7a9a1-c387-4e8b-a217-2838a9ab5a15",
+                "id": "60daa1a9-b85c-4375-a28c-cd55952933a9",
                 "name": "",
                 "role": "DEFENCE",
                 "quality": 60
             },
             {
-                "id": "03dcaa4d-e503-477f-a2b0-877c51545048",
+                "id": "155b98c0-0fc3-497c-bb6a-f69397c6314e",
                 "name": "",
                 "role": "DEFENCE",
-                "quality": 53
-            },
-            {
-                "id": "62c1a488-4e55-4c3c-83cd-2d7f11d5fc14",
-                "name": "",
-                "role": "DEFENCE",
-                "quality": 56
-            },
-            {
-                "id": "384ea1d3-0785-47a4-9c3f-eb17135a0838",
-                "name": "",
-                "role": "DEFENCE",
-                "quality": 68
-            },
-            {
-                "id": "698e9eb4-e314-4ce6-b762-bd7ed2d0d36b",
-                "name": "",
-                "role": "MIDFIELD",
-                "quality": 63
-            },
-            {
-                "id": "b0d38263-09a8-4ee0-aeff-15c6d8d35364",
-                "name": "",
-                "role": "MIDFIELD",
                 "quality": 60
             },
             {
-                "id": "d0fc18d4-4cf9-4fc8-b83b-d36cd4922a5d",
+                "id": "17231c57-765e-47d7-835c-5dbcd038cabb",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 60
+            },
+            {
+                "id": "d72c0671-2322-4366-a200-5ee04505ff17",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 57
+            },
+            {
+                "id": "8460a190-b1ea-4c7e-96a8-4cbcaa492b44",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 59
+            },
+            {
+                "id": "c88f9d45-13ae-4921-a2d7-65dcfd6c551c",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 69
+            },
+            {
+                "id": "2ec11f6c-0e6e-4fbc-abb2-5cb5c16279e2",
                 "name": "",
                 "role": "ATTACK",
                 "quality": 60
             },
             {
-                "id": "b3d34dcb-dfb7-4c8f-99d3-cf4ef47bbb9c",
+                "id": "b3ad0c6f-1c9d-4e88-ad5f-c440ae5d3625",
                 "name": "",
                 "role": "ATTACK",
-                "quality": 60
+                "quality": 62
             },
             {
-                "id": "6cc53cd2-9b2f-4508-9759-22b1233e1efd",
+                "id": "7576ec90-f538-4864-95c7-dde874954daf",
                 "name": "",
                 "role": "ATTACK",
                 "quality": 58
             },
             {
-                "id": "fedd51cb-7ec9-4990-ba45-7ab36ffe3f87",
+                "id": "11784c7b-11b0-49a7-9ccc-65f0d0e83c5b",
                 "name": "",
                 "role": "ATTACK",
                 "quality": 60
             }
         ],
         "formation": "FORMATION_4_2_3_1"
+    },
+    {
+        "id": "20c61c65-6bb8-4830-bc53-5981e1c40165",
+        "name": "Manchester City",
+        "icon": "icon_man_city",
+        "players": [
+            {
+                "id": "1b9c2123-8e28-4072-be4e-88959eabc316",
+                "name": "",
+                "role": "GOALIE",
+                "quality": 88
+            },
+            {
+                "id": "53fb7625-6cca-44d2-ba88-fec8ae82be26",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 91
+            },
+            {
+                "id": "9375f7a7-d0ea-40e5-80e0-4472e4675282",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 84
+            },
+            {
+                "id": "1ba67c92-d5f9-4859-8f5f-eb0817eec5b6",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 82
+            },
+            {
+                "id": "a047ef3c-2b6b-4e99-8c8f-6d6eacb4855d",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 84
+            },
+            {
+                "id": "3ce1aaaa-63aa-445f-bc5e-3d5c297102d3",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 84
+            },
+            {
+                "id": "23d1a856-2270-4d2a-9330-529af4ed23e7",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 83
+            },
+            {
+                "id": "8e8290da-abb2-4ce4-b66f-74135c11ef15",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 84
+            },
+            {
+                "id": "98e7cdcd-a632-4020-b6d9-6a464dfc0d9d",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 84
+            },
+            {
+                "id": "711cc91f-f23f-44d5-b181-bf8e57e56d1d",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 84
+            },
+            {
+                "id": "5bc15a07-f06c-4d0d-88af-b438e2675326",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 84
+            }
+        ],
+        "formation": "FORMATION_4_2_3_1"
+    },
+    {
+        "id": "4afe71ed-1ef3-422b-9ddc-37bcba1f976c",
+        "name": "PSG",
+        "icon": "icon_psg",
+        "players": [
+            {
+                "id": "49e0a622-4ce4-4ee0-bb25-1e3918b2d28c",
+                "name": "",
+                "role": "GOALIE",
+                "quality": 86
+            },
+            {
+                "id": "4b0d7c72-67cb-4a45-80fa-a0e86adb69fc",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 90
+            },
+            {
+                "id": "3e77609d-4a36-4800-9ec8-a948b741e506",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 86
+            },
+            {
+                "id": "c322706b-3de3-4326-94f3-f052823a64b9",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 81
+            },
+            {
+                "id": "0aed7626-b130-46b7-a5a7-eb45a02d64a0",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 75
+            },
+            {
+                "id": "355b65b3-6ba3-4309-9982-4d451e28d5c0",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 85
+            },
+            {
+                "id": "00e3fdfd-788f-44c2-96d0-d04ea891c52a",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 85
+            },
+            {
+                "id": "d0cfa5ac-575a-49fc-8ac0-8c90ba133833",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 85
+            },
+            {
+                "id": "fb7a3602-9f99-4167-a169-01de73e13a4a",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 85
+            },
+            {
+                "id": "ddb580f0-2d0f-432f-b1ec-36952e6ea98f",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 78
+            },
+            {
+                "id": "4772f8c8-fe61-4891-a760-66c58e784d18",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 84
+            }
+        ],
+        "formation": "FORMATION_4_3_3_A"
+    },
+    {
+        "id": "64e743a0-f26d-4efb-a711-59d4880484b6",
+        "name": "Club Brugge",
+        "icon": "icon_club_brugge",
+        "players": [
+            {
+                "id": "e5602d6f-7ba2-4571-a4c8-190a7dfa6294",
+                "name": "",
+                "role": "GOALIE",
+                "quality": 66
+            },
+            {
+                "id": "090c65e7-d0bd-4dc7-99b3-1b4d80bbfc1c",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 69
+            },
+            {
+                "id": "1fb0d199-9470-45b3-b21f-d2c0a041a42f",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 67
+            },
+            {
+                "id": "da5327c1-0852-4f77-8d58-987d4ea06923",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 61
+            },
+            {
+                "id": "4d4710fd-df90-4549-a43e-227237d50d66",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 70
+            },
+            {
+                "id": "9cf58276-897e-4750-91a7-816b839ea532",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 76
+            },
+            {
+                "id": "e1ffd23a-a50a-4a80-b65d-9095e273a34f",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 69
+            },
+            {
+                "id": "d88a8ef2-d284-4e5d-94d8-21de3aafd2c8",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 67
+            },
+            {
+                "id": "7721813e-76ca-4804-8b85-f48c962b92fb",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 70
+            },
+            {
+                "id": "ee61dbe4-aa60-4b07-b21a-195b246310e5",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 67
+            },
+            {
+                "id": "994e68c8-5451-453d-88a2-8f8fd28c324d",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 69
+            }
+        ],
+        "formation": "FORMATION_4_3_3_A"
+    },
+    {
+        "id": "48e9083b-6a53-4481-8923-29bab0603eac",
+        "name": "AC Milan",
+        "icon": "icon_milan",
+        "players": [
+            {
+                "id": "b6f488f6-6339-444d-8844-821d7ef1b8d1",
+                "name": "",
+                "role": "GOALIE",
+                "quality": 75
+            },
+            {
+                "id": "5effc6c9-98c7-4bc7-90bf-73c6b0ca3cca",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 75
+            },
+            {
+                "id": "a64308fe-cad6-439b-945f-93d7b2b3b9e9",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 77
+            },
+            {
+                "id": "3a3fa496-fdbf-49e3-939e-d7822666f742",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 75
+            },
+            {
+                "id": "5acb3dc1-7aa1-4fb8-85ad-666b132f2962",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 75
+            },
+            {
+                "id": "635b679b-ccef-49cc-a6fe-12e5ed7cc15b",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 76
+            },
+            {
+                "id": "c5b94678-8bba-41c4-b4ff-506f2a43f6dd",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 75
+            },
+            {
+                "id": "88ac5ee1-9511-4743-88bf-79c06229b73c",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 72
+            },
+            {
+                "id": "cefdd3a1-1c47-4261-b829-c55e7eeaa174",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 78
+            },
+            {
+                "id": "1cfac871-6144-4d7d-a30e-0bb1ea2ae681",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 75
+            },
+            {
+                "id": "68653d55-1831-4a51-8629-c7d1af276a2c",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 69
+            }
+        ],
+        "formation": "FORMATION_4_3_3_B"
+    },
+    {
+        "id": "8d071361-75e8-4dc8-aa46-86f2ebd181ef",
+        "name": "Manchester United",
+        "icon": "icon_man_utd",
+        "players": [
+            {
+                "id": "5fe40e7b-3772-44ae-8149-cead9783280b",
+                "name": "",
+                "role": "GOALIE",
+                "quality": 85
+            },
+            {
+                "id": "d6b0ae13-da51-4328-8d26-adba8410535c",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 92
+            },
+            {
+                "id": "afe3e1bf-3900-48f5-bbbb-52b653093e70",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 81
+            },
+            {
+                "id": "93f12e4c-76cd-41af-93a1-b5ed22877790",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 85
+            },
+            {
+                "id": "95d63044-7bf2-4e04-85bb-aaac83cbd51c",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 85
+            },
+            {
+                "id": "8f7a3159-6a5a-485f-beda-1a8a66cd889a",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 93
+            },
+            {
+                "id": "cbaba9ad-c2cc-4df8-9542-5b0416f0e036",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 85
+            },
+            {
+                "id": "00e127d5-5c49-494e-9623-aaf264794521",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 84
+            },
+            {
+                "id": "15460207-1ad3-4822-9bc7-da80b349c494",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 85
+            },
+            {
+                "id": "cdbc0961-bf07-458b-b523-375170d73d31",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 90
+            },
+            {
+                "id": "0f73cd38-ce04-4029-9ad4-2f81bf79a6bc",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 79
+            }
+        ],
+        "formation": "FORMATION_4_3_3_B"
+    },
+    {
+        "id": "4b575a2a-4489-4d10-bdb9-b6eb6c84dece",
+        "name": "Villareal",
+        "icon": "icon_villareal",
+        "players": [
+            {
+                "id": "d7d1df24-d897-4a43-99ba-feda06159c42",
+                "name": "",
+                "role": "GOALIE",
+                "quality": 60
+            },
+            {
+                "id": "17863c4b-cc9a-4371-ad7d-218f3e150f76",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 70
+            },
+            {
+                "id": "f321f484-14fc-4cf0-9f69-1afd89f38808",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 76
+            },
+            {
+                "id": "aad54b1d-2ab0-4b6b-8f2a-fef39f3e00c1",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 69
+            },
+            {
+                "id": "d5d6adf7-b1a0-4f34-9920-59cbd1f36579",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 70
+            },
+            {
+                "id": "04e0f34a-6fe8-49d9-a92b-bb329d5a734b",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 70
+            },
+            {
+                "id": "d2e18c95-c723-46e3-a1e2-4a200c2919e1",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 67
+            },
+            {
+                "id": "cd40daf9-b15e-434b-baab-d7b0a2cf6cb7",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 70
+            },
+            {
+                "id": "f612c0e1-b62d-43cc-bd3e-63f0aaf60ef3",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 74
+            },
+            {
+                "id": "e3a947f3-ba93-4366-9a7f-46fd30a76716",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 71
+            },
+            {
+                "id": "dc6b275d-2132-43a5-90a7-2aab0149ef26",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 70
+            }
+        ],
+        "formation": "FORMATION_4_3_3_A"
+    },
+    {
+        "id": "dff60411-a7fe-485e-8c29-d15751dbdaaa",
+        "name": "Barcelona",
+        "icon": "icon_barcelona",
+        "players": [
+            {
+                "id": "73f94d9a-69dc-41d0-bb43-26de106e64af",
+                "name": "",
+                "role": "GOALIE",
+                "quality": 84
+            },
+            {
+                "id": "49230d5b-125a-4339-b789-eb2d8d7f8466",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 94
+            },
+            {
+                "id": "b2ed6a6d-4243-4afd-8422-af5f90a7b9b0",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 85
+            },
+            {
+                "id": "6593abf3-876a-4d68-a586-0070e0a0b041",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 85
+            },
+            {
+                "id": "5f72f488-1e37-4916-a9ee-3fd356fabd08",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 92
+            },
+            {
+                "id": "d146469d-de28-4245-847d-802dd3e50cad",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 85
+            },
+            {
+                "id": "a3aa9d42-31d6-4164-8986-01964b2af30c",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 86
+            },
+            {
+                "id": "b861ec6c-2302-4165-bcf5-2783d29c99b6",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 91
+            },
+            {
+                "id": "43666374-34d3-4567-b61d-eb9ad620c6a1",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 83
+            },
+            {
+                "id": "0ac1398e-4420-4dee-986e-601fc8f98f2e",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 85
+            },
+            {
+                "id": "1dfaedc9-eae2-4e03-91f6-c8c91e39d623",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 85
+            }
+        ],
+        "formation": "FORMATION_4_3_3_B"
+    },
+    {
+        "id": "283b6e7d-ff7e-41af-bc10-87ba2899abc8",
+        "name": "Real Madrid",
+        "icon": "icon_real_madrid",
+        "players": [
+            {
+                "id": "8ef4a527-9439-4a06-a3f4-6b959252250d",
+                "name": "",
+                "role": "GOALIE",
+                "quality": 89
+            },
+            {
+                "id": "4813db64-567c-46b6-93e2-119669454926",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 89
+            },
+            {
+                "id": "714a9f25-45d1-4951-8e10-4d817efa2027",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 91
+            },
+            {
+                "id": "f4517d3d-60b0-4081-b792-b859851eb4ea",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 90
+            },
+            {
+                "id": "d7c38f4d-04ed-45ab-8caa-4843dbbfe256",
+                "name": "",
+                "role": "DEFENCE",
+                "quality": 89
+            },
+            {
+                "id": "d81ca57c-2a6f-4376-8f41-ffcd430a4094",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 90
+            },
+            {
+                "id": "4e38b1f3-4277-42fc-bded-d887ae41b4c5",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 86
+            },
+            {
+                "id": "c68c678b-93f3-4837-b24d-8a82fbea69b1",
+                "name": "",
+                "role": "MIDFIELD",
+                "quality": 100
+            },
+            {
+                "id": "42c36e32-05ee-4e28-86f2-6ff04f1b4eaa",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 97
+            },
+            {
+                "id": "0ae3762e-b87d-4716-be87-54debf0f21ec",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 91
+            },
+            {
+                "id": "d424d497-990c-493b-8c47-5cb17dc5d0b9",
+                "name": "",
+                "role": "ATTACK",
+                "quality": 90
+            }
+        ],
+        "formation": "FORMATION_4_3_3_B"
     }
 ]

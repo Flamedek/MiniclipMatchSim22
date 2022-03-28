@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/button_layout"
+        app:layout_constraintBottom_toTopOf="@id/main_btn_matches_continue"
         app:layout_constraintWidth_min="320dp"
         app:layout_constrainedHeight="true"
         >
@@ -67,21 +67,19 @@
 
     </ScrollView>
 
-
-    <FrameLayout
-        android:id="@+id/button_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/main_btn_matches_continue"
+        android:layout_width="300dp"
+        android:layout_height="72dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:cornerRadius="18dp"
+        app:elevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        >
-
-        <include
-            android:id="@+id/button"
-            layout="@layout/stage_fragment_button"
-            />
-    </FrameLayout>
+        tools:text="@string/btn_play_matches"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

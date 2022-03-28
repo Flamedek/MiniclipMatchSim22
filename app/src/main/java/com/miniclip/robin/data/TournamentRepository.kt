@@ -11,6 +11,7 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
 import java.util.*
+import kotlin.random.Random
 
 class TournamentRepository(
     val teamsRepository: TeamsRepository,
@@ -20,12 +21,22 @@ class TournamentRepository(
     /**
      * Demo-ish content. Create the initial group stage object.
      */
-    suspend fun getCurrentGroupStage(): GroupStage {
-        val group = "F"
+    suspend fun getFixedGroupStage(): GroupStage {
         val teams = teamsRepository.getTeams().take(4)
-        val matches = generateEmptyMatches(teams)
-        val scores = getSortedTeamStats(teams, matches)
-        return GroupStage(group, teams, matches, scores)
+        return createGroupStage("F", teams)
+    }
+
+    /**
+     * Picks four random teams to generate a group stage.
+     */
+    suspend fun getRandomGroupStage(random: Random = Random): GroupStage {
+        val teams = teamsRepository.getTeams().shuffled(random).take(4)
+        val name = Char('A'.code + random.nextInt(8)).toString()
+        return createGroupStage(name, teams)
+    }
+
+    fun resetGroupStage(group: GroupStage): GroupStage {
+        return createGroupStage(group.name, group.teams)
     }
 
     /**
@@ -106,6 +117,14 @@ class TournamentRepository(
             goalsScored = results.sumOf { result -> if (result.teams.first == team) result.score.first else result.score.second },
             goalsAgainst = results.sumOf { result -> if (result.teams.first == team) result.score.second else result.score.first },
         )
+    }
+
+    private fun createGroupStage(name: String, teams: List<Team>): GroupStage {
+        require(teams.size == 4) { "Group stage must have 4 teams. Got: ${teams.size}" }
+
+        val matches = generateEmptyMatches(teams)
+        val scores = getSortedTeamStats(teams, matches)
+        return GroupStage(name, teams, matches, scores)
     }
 
     private fun getSortedTeamStats(teams: List<Team>, matches: List<Match>) =

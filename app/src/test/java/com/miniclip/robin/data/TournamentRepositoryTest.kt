@@ -27,7 +27,7 @@ internal class TournamentRepositoryTest {
 
     @Test
     fun testMatchGrouping() = runBlocking {
-        val stage = repository.getCurrentGroupStage()
+        val stage = repository.getFixedGroupStage()
 
         val teamCount = stage.teams.size
         val matchesPerTeam = teamCount - 1

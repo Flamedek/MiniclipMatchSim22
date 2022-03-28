@@ -2,7 +2,6 @@ package com.miniclip.robin.ui
 
 import android.graphics.Color
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
@@ -96,31 +95,30 @@ class GroupStageFragment : Fragment(R.layout.stage_fragment) {
     }
 
     private fun initInitialState() {
-        val view = StageFragmentButtonBinding.inflate(LayoutInflater.from(requireContext()), views.mainCard, true)
+        val view = StageFragmentInitialBinding.inflate(layoutInflater, views.mainCard, true)
 
-        view.mainActionButton.setText(R.string.btn_start_teams)
-        view.mainActionButton.setOnClickListener {
-            viewModel.onStartTeams()
+        view.mainBtnGroupRandom.setOnClickListener {
+            viewModel.onStartTeams(GroupStageViewModel.GroupMode.RANDOM)
+        }
+        view.mainBtnGroupF.setOnClickListener {
+            viewModel.onStartTeams(GroupStageViewModel.GroupMode.FIXED)
         }
     }
 
     private fun initTeamsState(group: GroupStage) {
-        val view = StageFragmentTeamsBinding.inflate(LayoutInflater.from(requireContext()), views.mainCard, true)
+        val view = StageFragmentTeamsBinding.inflate(layoutInflater, views.mainCard, true)
 
         view.mainCardTitle.text = getString(R.string.group_title, group.name)
-        view.mainActionButton.root.visibility = View.GONE
-        view.mainActionButton.root.setText(R.string.btn_start_matches)
-        view.mainActionButton.root.setOnClickListener {
+        view.mainBtnTeamsContinue.visibility = View.GONE
+        view.mainBtnTeamsContinue.setOnClickListener {
             viewModel.onStartMatches()
         }
 
         // For each team add a row and animate in delayed
         for ((i, team) in group.teams.withIndex()) {
-            val item = StageFragmentTeamsItemBinding.inflate(LayoutInflater.from(requireContext()), view.mainFragmentTeams, true)
-            val iconResource = resources.getIdentifier(team.icon, "drawable", requireContext().packageName)
-            if (iconResource != 0) {
-                item.mainFragmentTeamIcon.setImageResource(iconResource)
-            }
+            val item = StageFragmentTeamsItemBinding.inflate(layoutInflater, view.mainFragmentTeams, true)
+
+            item.mainFragmentTeamIcon.setImageResource(viewModel.getIconResource(team.icon))
             item.mainFragmentTeamText.text = team.name
 
             item.root.alpha = 0f
@@ -137,7 +135,7 @@ class GroupStageFragment : Fragment(R.layout.stage_fragment) {
         // add action button after delay
         view.root.postDelayed(TOTAL_TRANSITION_DURATION + ((group.teams.size + 1) * 250L)) {
             TransitionManager.beginDelayedTransition(views.root, getDefaultTransition())
-            view.mainActionButton.root.visibility = View.VISIBLE
+            view.mainBtnTeamsContinue.visibility = View.VISIBLE
         }
     }
 
@@ -155,13 +153,13 @@ class GroupStageFragment : Fragment(R.layout.stage_fragment) {
         val isFinished = group.matches.all { match -> match.result != null }
 
         matchViews.mainCardTitle.text = getString(R.string.group_title, group.name)
-        matchViews.button.mainActionButton.text = if (isFinished) {
+        matchViews.mainBtnMatchesContinue.text = if (isFinished) {
             getString(R.string.btn_start_results)
         } else {
             getString(R.string.btn_play_matches)
         }
 
-        matchViews.button.mainActionButton.setOnClickListener {
+        matchViews.mainBtnMatchesContinue.setOnClickListener {
             if (isFinished) {
                 viewModel.onStartResults()
             } else {
@@ -176,7 +174,7 @@ class GroupStageFragment : Fragment(R.layout.stage_fragment) {
     private fun initResultsState(group: GroupStage) {
         TransitionManager.beginDelayedTransition(views.root, getDefaultTransition())
 
-        matchViews.button.mainActionButton.visibility = View.GONE
+        matchViews.mainBtnMatchesContinue.visibility = View.GONE
         matchViews.mainCardMatchesLayout.removeAllViews()
 
         val view = StageFragmentResultsBinding.inflate(layoutInflater, matchViews.mainCardMatchesLayout, true)
@@ -187,12 +185,12 @@ class GroupStageFragment : Fragment(R.layout.stage_fragment) {
         view.result2Name.text = group.scores[1].team.name
         view.result2Logo.setImageResource(viewModel.getIconResource(group.scores[1].team.icon))
 
+        view.mainButtonToStart.setOnClickListener {
+            removeCelebration()
+            viewModel.onToStartClick()
+        }
         view.mainButtonRestart.setOnClickListener {
-            celebrationOverlayView?.let { overlay ->
-                overlay.stop()
-                overlay.release()
-                views.root.removeView(overlay)
-            }
+            removeCelebration()
             viewModel.onRestartClick()
         }
 
@@ -205,6 +203,14 @@ class GroupStageFragment : Fragment(R.layout.stage_fragment) {
 
             views.root.addView(overlay, ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))
             celebrationOverlayView = overlay
+        }
+    }
+
+    private fun removeCelebration() {
+        celebrationOverlayView?.let { overlay ->
+            overlay.stop()
+            overlay.release()
+            views.root.removeView(overlay)
         }
     }
 
