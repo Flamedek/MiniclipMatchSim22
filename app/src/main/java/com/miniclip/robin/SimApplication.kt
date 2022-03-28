@@ -10,6 +10,12 @@ import kotlinx.serialization.ExperimentalSerializationApi
 
 class SimApplication : Application() {
 
+    /*
+     * Manual dependency injection is set-up and retrieved from here, a global app scope.
+     * If this grows it could be split into more classes/builders/factories or a service lookup
+     * pattern could be implemented. Could also look at DI tools like dagger and hilt.
+     */
+
     lateinit var teamsRepository: TeamsRepository
         private set
 

@@ -14,7 +14,7 @@ class MatchPlayer(val match: Match) {
     /**
      * Returns a coroutine [kotlinx.coroutines.flow.Flow] that can be used to 'playback' events from the match.
      * The flow emits items such that the total match takes around [matchDuration] to complete (give or take for extra time minutes).
-     * To change speeds you can disregard a current Flow and get a new one with a different duration starting at the current time using [startingMinute].
+     * To change speeds you can disregard a current Flow and get a new one with a different duration, starting at the current time using [startingMinute].
      */
     suspend fun getEvents(matchDuration: Duration, startingMinute: Int = 0) = flow {
         val delayPerGameMinute = matchDuration.inWholeMilliseconds / 90L
