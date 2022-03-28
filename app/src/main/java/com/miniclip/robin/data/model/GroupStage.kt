@@ -2,7 +2,6 @@ package com.miniclip.robin.data.model
 
 import com.miniclip.robin.simulation.model.Match
 
-
 data class GroupStage(
     val name: String,
     val teams: List<Team>,

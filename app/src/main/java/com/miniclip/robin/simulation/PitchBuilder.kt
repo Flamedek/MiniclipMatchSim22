@@ -31,6 +31,9 @@ class PitchBuilder {
         )
     }
 
+    /**
+     * Places players spaced evenly on one side of the pitch according to their current formation.
+     */
     fun positionFormation(team: Team): List<PositionedPlayer> {
         val lines = team.formation.positionData.split('-')
         val availablePlayers: Array<Player?> = team.players.toTypedArray()
@@ -63,6 +66,9 @@ class PitchBuilder {
         }
     }
 
+    /**
+     * Swaps the y-position of every player such that he moves to the other side of the field.
+     */
     fun swapPitchSide(players: List<PositionedPlayer>): List<PositionedPlayer> {
         return players.map { player -> player.copy(position = Vec2(player.position.x, PITCH_LENGTH - player.position.y)) }
     }

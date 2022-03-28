@@ -27,13 +27,31 @@ import com.miniclip.robin.util.extensions.viewBinding
 private const val DEFAULT_TRANSITION_DURATION = 650L
 private const val TOTAL_TRANSITION_DURATION = DEFAULT_TRANSITION_DURATION * 2
 
+/**
+ * Main Fragment for the app with multiple states.
+ * Could be further split up to increase readability.
+ * This view is 'dumb', only shows data from the ViewModel and reports back user events.
+ */
 class GroupStageFragment : Fragment(R.layout.stage_fragment) {
 
+    /** Main view model */
     private val viewModel: GroupStageViewModel by fragmentViewModel()
 
+    /** Base view bindings */
     private val views: StageFragmentBinding by viewBinding()
 
+    /** The state that is currently shown */
     private var displayedState: GroupStageViewModel.ViewState? = null
+
+    // some variables for the match/result stages
+    private lateinit var matchViews: StageFragmentMatchesBinding
+    private lateinit var scoreTableBuilder: ScoresTableBuilder
+    private lateinit var matchListBuilder: MatchListBuilder
+
+    private var celebrationOverlayView: AlphaMovieView? = null
+
+    //
+    // Lifecycle
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel.viewState.observe(viewLifecycleOwner, ::moveToState)
@@ -55,6 +73,7 @@ class GroupStageFragment : Fragment(R.layout.stage_fragment) {
      */
     private fun moveToState(state: GroupStageViewModel.ViewState) {
         if (!state::class.isInstance(displayedState) && state !is Results) {
+            // if state changed, kickoff an transition
             val transition = getDefaultTransition()
             TransitionManager.beginDelayedTransition(views.root, transition)
             views.mainCard.removeAllViews()
@@ -121,12 +140,6 @@ class GroupStageFragment : Fragment(R.layout.stage_fragment) {
             view.mainActionButton.root.visibility = View.VISIBLE
         }
     }
-
-    private lateinit var matchViews: StageFragmentMatchesBinding
-    private lateinit var scoreTableBuilder: ScoresTableBuilder
-    private lateinit var matchListBuilder: MatchListBuilder
-
-    private var celebrationOverlayView: AlphaMovieView? = null
 
     private fun initMatchesState(group: GroupStage) {
         if (displayedState !is Matches) {

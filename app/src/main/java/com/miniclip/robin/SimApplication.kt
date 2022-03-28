@@ -6,6 +6,7 @@ import com.miniclip.robin.data.TournamentRepository
 import com.miniclip.robin.data.jsonDataSource
 import com.miniclip.robin.data.model.Team
 import com.miniclip.robin.simulation.MatchEngineV2
+import kotlinx.serialization.ExperimentalSerializationApi
 
 class SimApplication : Application() {
 
@@ -20,6 +21,7 @@ class SimApplication : Application() {
         initDependencies()
     }
 
+    @ExperimentalSerializationApi
     private fun initDependencies() {
         val teamDataSource = jsonDataSource<List<Team>> {
             assets.open("teams.json")

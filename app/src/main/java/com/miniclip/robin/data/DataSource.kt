@@ -1,5 +1,8 @@
 package com.miniclip.robin.data
 
-interface DataSource<T> {
-    suspend fun getData(): T
+/**
+ * Generic functional interface to retrieve some data [T].
+ */
+fun interface DataSource<T> {
+    fun getData(): T
 }

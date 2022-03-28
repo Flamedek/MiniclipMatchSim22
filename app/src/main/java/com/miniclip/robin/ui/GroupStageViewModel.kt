@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 class GroupStageViewModel(activity: Application) : AndroidViewModel(activity) {
 
     /**
-     * Observable value for the current state to display
+     * Observable value for the current state to display in the view.
      */
     val viewState = MutableLiveData<ViewState>()
 
@@ -27,10 +27,23 @@ class GroupStageViewModel(activity: Application) : AndroidViewModel(activity) {
         reloadGroupStage()
     }
 
+    //
+    // Getters
+
+    /**
+     * Get the resource icon to use for a teams icon
+     */
     @DrawableRes
     fun getIconResource(icon: String): Int {
         val resId = application.resources.getIdentifier(icon, "drawable", application.packageName)
         return resId.takeIf { it != 0 } ?: R.drawable.icon_team_default
+    }
+
+    /**
+     * @return whether to take out the confetti cannon
+     */
+    fun shouldCelebrate(): Boolean {
+        return viewState.value is ViewState.Results && groupStage.scores.firstOrNull()?.team?.name == "Ajax"
     }
 
     //
@@ -65,10 +78,6 @@ class GroupStageViewModel(activity: Application) : AndroidViewModel(activity) {
 
     fun onRestartClick() {
         reloadGroupStage()
-    }
-
-    fun shouldCelebrate(): Boolean {
-        return viewState.value is ViewState.Results && groupStage.scores.firstOrNull()?.team?.name == "Ajax"
     }
 
     private fun reloadGroupStage() {

@@ -10,7 +10,7 @@ import kotlin.random.Random
 
 /*
  * A standalone utility class to generate our demo content in 'teams.json'.
- * This should not be considered part of the app, and would be stripped by ProGuard/R8.
+ * This should not be considered part of the app, and would be stripped by ProGuard/R8 optimizer.
  * Normally this data would be fetched from the backend.
  */
 fun main() {

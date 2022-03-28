@@ -19,9 +19,7 @@ import java.io.InputStream
  * @throws [IOException] If an I/O error occurs and stream can't be read from.
  */
 @ExperimentalSerializationApi
-inline fun <reified T : Any> jsonDataSource(crossinline streamProvider: () -> InputStream) = object : DataSource<T> {
-    override suspend fun getData(): T {
-        val stream = streamProvider()
-        return Json.decodeFromStream(stream)
-    }
+inline fun <reified T : Any> jsonDataSource(crossinline streamProvider: () -> InputStream) = DataSource<T> {
+    val stream = streamProvider()
+    Json.decodeFromStream(stream)
 }

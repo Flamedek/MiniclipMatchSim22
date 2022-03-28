@@ -27,8 +27,11 @@ class MatchEvent(
 )
 
 sealed interface MatchEventData {
+    /** Represents no noteworthy event, just in increase in time. */
     object None : MatchEventData
+    /** Match half time */
     object Halftime : MatchEventData
+    /** Match end */
     object End : MatchEventData
 
     data class Goal(val team: Team, val player: Player, val type: GoalType) : MatchEventData
@@ -36,6 +39,7 @@ sealed interface MatchEventData {
     data class SavedShot(val shooter: Player, val goalie: Player) : MatchEventData
     data class MissedShot(val shooter: Player) : MatchEventData
 
+    // (potential more event types)
     class Pass : MatchEventData
     class Tackle : MatchEventData
     class Movement : MatchEventData
@@ -46,5 +50,13 @@ sealed interface MatchEventData {
 }
 
 enum class GoalType {
-    SHOT_DISTANCE, SHOT_PLACED_LOW, SHOT_PLACED_HIGH, ROLLER, CROSS_HEADER, CROSS_TAP_IN, CROSS_VOLLEY, CROSS_BICYCLE, HAND_OF_GOD,
+    SHOT_DISTANCE,
+    SHOT_PLACED_LOW,
+    SHOT_PLACED_HIGH,
+    SHOT_ROLLER,
+    CROSS_HEADER,
+    CROSS_TAP_IN,
+    CROSS_VOLLEY,
+    CROSS_BICYCLE,
+    HAND_OF_GOD;
 }

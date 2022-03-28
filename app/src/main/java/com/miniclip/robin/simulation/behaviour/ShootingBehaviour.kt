@@ -13,9 +13,13 @@ import com.miniclip.robin.util.Vec2F
 import com.miniclip.robin.util.toFloats
 import kotlin.random.Random
 
+/** The ideal distance to take a shot */
 private val BASE_SHOOTING_DISTANCE = 16f
 
-class ShootingBehaviour : GameBehaviour {
+/**
+ * Behaviour to insert shot events based on the attackers current position
+ */
+class ShootingBehaviour(private val random: Random) : GameBehaviour {
 
     override fun getWeightedActions(state: PitchState): List<WeightedAction> {
         val attackingTeam = state.possession?.team ?: return emptyList()
@@ -48,46 +52,38 @@ class ShootingBehaviour : GameBehaviour {
 
         private val builder = PitchBuilder()
 
-        private lateinit var result: MatchEventData
-
         override fun getEventWeight(): Int {
             // TODO make event more likely based on player stats, tactics, etc.
             val maxDistance = PITCH_LENGTH / 2
             val t = 1f - ((distance - BASE_SHOOTING_DISTANCE) / (maxDistance - BASE_SHOOTING_DISTANCE))
-            val lerped = lerp(0, WeightedAction.WEIGHT_NORMAL, t.coerceIn(0f, 1f))
-            return lerped
+            return lerp(0, WeightedAction.WEIGHT_NORMAL, t.coerceIn(0f, 1f))
         }
 
         private fun rollResult(): MatchEventData {
             // TODO calculate chance based on distance, stats, etc.
-            // TODO check defender blocks
+            // TODO check if defender blocks
 
             val shotQuality = player.data.quality - SHOOT_HANDICAP
             val goalieQuality = goalie.data.quality
 
-            if (!rollSkillCheck(Random, shotQuality, 1f)) {
+            if (!rollSkillCheck(random, shotQuality, 1f)) {
                 // missed!
                     //
                 return MatchEventData.MissedShot(shooter = player.data)
             }
 
-            return if (rollDuelCheck(Random, shotQuality, goalieQuality, 20)) {
+            return if (rollDuelCheck(random, shotQuality, goalieQuality, 20)) {
                 MatchEventData.Goal(player.team, player.data, type = GoalType.SHOT_DISTANCE)
             } else {
                 MatchEventData.SavedShot(shooter = player.data, goalie = goalie.data)
             }
         }
 
-        override fun isSuccess(random: Random): Boolean {
-            result = rollResult()
-            return result is MatchEventData.Goal
+        override fun getEventData(): MatchEventData {
+            return rollResult()
         }
 
-        override fun getEventData(random: Random, success: Boolean): MatchEventData {
-            return result
-        }
-
-        override fun applyEvent(state: PitchState, event: MatchEventData, success: Boolean): PitchState {
+        override fun applyEvent(state: PitchState, event: MatchEventData): PitchState {
             when (event) {
                 is MatchEventData.Goal -> {
                     // reset back to kickoff

@@ -27,14 +27,16 @@ class MatchEngineV1(private val random: Random = Random) : MatchSimulator {
         val homeQuality = averageQuality(match.teams.first)
         val awayQuality = averageQuality(match.teams.second)
 
-        val goalCount = random.nextDouble(0.75, 2.0).pow(3.0).toInt()
-        val byTeam = (0 until goalCount).groupBy {
+        val goalCount = random.nextDouble(0.75, 2.0).pow(3.0).toInt() // TODO base goal count also on quality difference
+
+        // separate goals in home vs away
+        val goalsByTeam = (0 until goalCount).groupBy {
             if (scoringValue(homeQuality, awayQuality) >= scoringValue(awayQuality, homeQuality)) "home" else "away"
         }
 
         return MatchResult(
             teams = match.teams,
-            score = byTeam["home"].orEmpty().size to byTeam["away"].orEmpty().size,
+            score = goalsByTeam["home"].orEmpty().size to goalsByTeam["away"].orEmpty().size,
             events = emptyList()
         )
     }

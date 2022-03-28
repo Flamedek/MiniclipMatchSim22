@@ -16,12 +16,13 @@ private val DEFAULT_MOVEMENT = 4f
 /** Distance from the goal that defenders will move towards when being attacked */
 private val DEFENCE_DISTANCE = 20f
 
-class MovementBehaviour : GameBehaviour {
+class MovementBehaviour(private val random: Random) : GameBehaviour {
 
     /**
      * Applies the default player movement behaviour.
      * Rules consist of:
-     * - attacker with ball moves to goal
+     * - if the ball is free, the closest player of both teams moves to take possession.
+     * - attacker with the ball moves towards goal
      * - attackers move to supporting positions
      * - defenders move to defencive positions
      */
@@ -38,7 +39,7 @@ class MovementBehaviour : GameBehaviour {
             closestAway.moveTowards(ballPos, playerSpeed(closestAway))
 
             if (closestHome.position == ballPos && closestAway.position == ballPos) {
-                val roll = rollDuelCheck(Random, closestHome.data.quality, closestAway.data.quality)
+                val roll = rollDuelCheck(random, closestHome.data.quality, closestAway.data.quality)
                 val tackleWinner = if (roll) closestHome else closestAway
                 return state.copy(possession = tackleWinner)
             }  else if (closestHome.position == ballPos) {
@@ -47,7 +48,7 @@ class MovementBehaviour : GameBehaviour {
                 return state.copy(possession = closestAway)
             }
 
-            // TODO all other players move back to formation
+            // TODO all other players move back into formation
 
         } else {
             val attackingPlayers = if (attackingTeam == state.homePlayers.first().team) state.homePlayers else state.awayPlayers
@@ -60,6 +61,7 @@ class MovementBehaviour : GameBehaviour {
             }
 
             attackingPlayers.forEach { player ->
+                // TODO consult team tactics
                 if (player == state.possession) {
                     // attacker with ball moves towards goal
                     player.moveTowards(targetGoal, playerSpeed(state.possession))
@@ -69,12 +71,13 @@ class MovementBehaviour : GameBehaviour {
                     val target = Vec2(player.position.x, targetGoal.y)
                     player.moveTowards(target, playerSpeed(player))
                 } else if (player.data.role == PlayerRole.DEFENCE) {
-                    // Todo move up defenders up to a certain line
+                    // TODO move up defenders up to a certain line
                 }
             }
 
             // defenders move backwards towards goal.
             defendingPlayers.forEach { player ->
+                // TODO consult team tactics
                 if (player.data.role == PlayerRole.DEFENCE) {
                     // Defenders move to a distance from goal. Unless the attacker is closer to the goal than themselves, then they move straight into goal.
                     val target = if (player.position.distanceSquared(targetGoal) < state.possession.position.distanceSquared(targetGoal)) {
