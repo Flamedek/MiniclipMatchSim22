@@ -2,6 +2,7 @@ package com.miniclip.robin.util
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import kotlin.random.Random
 
 internal class Vec2Test {
 
@@ -30,5 +31,12 @@ internal class Vec2Test {
         val vec = Vec2(4, 3)
         assertEquals(5, vec.length().toInt())
         assertEquals(25, vec.lengthSquared())
+    }
+
+    @Test
+    fun normalize() {
+        val vecF = Vec2F(Random.nextFloat() * 100f, Random.nextFloat() * 100f)
+        val normalized = vecF.normalize()
+        assertEquals(1f, normalized.length())
     }
 }
